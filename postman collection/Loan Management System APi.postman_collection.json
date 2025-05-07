@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "f5d18098-a916-487d-9d05-9c852d1c492d",
+		"name": "Loan Management System APi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44705511"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Rupendra\",\r\n  \"email\": \"rupendra.demo@example.com\",\r\n  \"password\": \"password\",\r\n  \"role\": [\"admin\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Rupendra\",\r\n  \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/customers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ravi Sharma\",\r\n  \"email\": \"ravi.sharma@example.com\",\r\n  \"contactNumber\": \"9876543210\",\r\n  \"address\": \"Lucknow, Uttar Pradesh\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/customers"
+			},
+			"response": []
+		},
+		{
+			"name": "update customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ankit Kumar Verma\",\r\n  \"email\": \"ankit.kumar@example.com\",\r\n  \"contactNumber\": \"9876543211\",\r\n  \"address\": \"MG Road, Lucknow\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/customers/1"
+			},
+			"response": []
+		},
+		{
+			"name": "fetch/customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/customers/1"
+			},
+			"response": []
+		},
+		{
+			"name": "api/loans/apply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjUyMjMxMCwiZXhwIjoxNzQ2NjA4NzEwfQ.KgLTxPvNblaAzQsEl_AWhL65jwGNDO_hzMq_8lvJdWI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 1,\r\n  \"amount\": 100000,\r\n  \"interestRate\": 10,\r\n  \"durationMonths\": 12,\r\n  \"purpose\": \"Home Renovation\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/loans/apply"
+			},
+			"response": []
+		},
+		{
+			"name": "api/loans/approve",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/api/loans/1/approve"
+			},
+			"response": []
+		},
+		{
+			"name": "api/loans/reject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/api/loans/6/reject"
+			},
+			"response": []
+		},
+		{
+			"name": "api/loans",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/loans/1"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/repayments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjYwNTk4OSwiZXhwIjoxNzQ2NjkyMzg5fQ.3VCOMsUWELmvm_VHS-N_fNOFuQtf8Vr6WpzoIpFr1cU"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amountPaid\": 9166.67,\r\n  \"paymentMode\":\"ONLINE\",\r\n  \"paymentDate\": \"2025-05-06\",\r\n  \"loan\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/repayments"
+			},
+			"response": []
+		},
+		{
+			"name": "api/reports/history",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/api/reports/pending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSdXBlbmRyYSIsImlhdCI6MTc0NjUyMjMxMCwiZXhwIjoxNzQ2NjA4NzEwfQ.KgLTxPvNblaAzQsEl_AWhL65jwGNDO_hzMq_8lvJdWI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/reports/pending"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

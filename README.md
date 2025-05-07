@@ -27,7 +27,7 @@ cd loan-management-system-
 1. Start your MySQL server.
 2. Create a new database:
    ```sql
-   CREATE DATABASE loan_management_system;
+   CREATE DATABASE lms;
    ```
 3. Update `application.properties` with your MySQL credentials:
    ```properties

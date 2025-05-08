@@ -18,8 +18,8 @@ Ensure the following are installed on your system:
 ### 📦 Clone the Repository
 
 ```bash
-git clone https://github.com/RupendraJaiswal/loan-management-system-.git
-cd loan-management-system-
+git clone https://github.com/RupendraJaiswal/loan-management-system.git
+cd loan-management-system
 ```
 
 ### ⚙️ Database Setup
